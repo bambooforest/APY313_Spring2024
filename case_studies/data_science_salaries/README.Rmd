@@ -1,0 +1,87 @@
+---
+title: "Exploring data science salaries"
+author: "Steven Moran"
+date: "2024-02-06"
+output: github_document
+---
+
+```{r load_libraries, message=FALSE}
+# Load the libraries
+library(tidyverse)
+library(knitr)
+```
+
+# Introduction
+
+In this report we will explore data science salaries. The data come from Kaggle:
+
+* https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries
+
+
+# Methods
+
+Let's load the data.
+
+```{r, message=FALSE}
+# Load the CSV file
+df <- read_csv('jobs_in_data.csv')
+
+# If you use Excel:
+# library(readxl)
+# df_excel <- read_excel('jobs_in_data.xls')
+```
+
+Let's get the proportion of work place setting based on country.
+
+```{r}
+# Create a new table with total number of jobs by country
+total_jobs <- df %>% 
+  select(employee_residence) %>% 
+  group_by(employee_residence) %>% 
+  summarize(total_jobs = n())
+
+total_jobs_by_worksetting <- df %>% 
+  select(employee_residence, work_setting) %>% 
+  group_by(employee_residence, work_setting) %>% 
+  summarize(total_jobs_by_worksetting = n())
+
+results <- left_join(total_jobs_by_worksetting, total_jobs)
+
+results <- results %>% mutate(proportion = total_jobs_by_worksetting / total_jobs)
+```
+
+Let's make a stacked bar plot.
+
+```{r}
+results_30 <- results %>% filter(total_jobs > 19) 
+
+ggplot(data = results_30, aes(fill = work_setting, x = employee_residence, y = proportion)) + 
+ geom_bar(position = "stack", stat = "identity")
+
+```
+
+What's the average salary per country.
+
+```{r}
+mean_salary_countries <- df %>% 
+  select(employee_residence, work_setting, salary_in_usd) %>%
+  group_by(employee_residence, work_setting) %>%
+  summarize(mean_salary = mean(salary_in_usd))
+
+mean_salary_countries %>% arrange(desc(mean_salary), employee_residence)
+
+df %>% 
+  group_by(employee_residence) %>% 
+  summarize(people = n())
+
+final <- left_join(results_30, mean_salary_countries)
+```
+
+Our final table.
+
+```{r}
+final %>% kable()
+```
+
+
+

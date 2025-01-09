@@ -1,0 +1,11 @@
+env
+*.egg-info
+__pycache__
+raw/parabank
+raw/varikin
+*.zenodo.json
+kinbank/cldf/.transcription-report.json
+.Rproj.user
+.Rhistory
+kinbank.Rproj
+collections/

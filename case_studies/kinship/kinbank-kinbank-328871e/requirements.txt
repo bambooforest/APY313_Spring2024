@@ -1,0 +1,8 @@
+pylexibank>=2.1
+cldfbench[excel]
+pyglottolog
+pyconcepticon
+pytest-cldf
+openpyxl
+pandas
+

@@ -1,0 +1,56 @@
+---
+title: "Moran, McCloy, Wright 2012"
+author: "Steve Moran"
+date: "(`r format(Sys.time(), '%d %B, %Y')`)"
+output:
+  github_document:
+      toc: true
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+* Moran, S., McCloy, D. R., & Wright, R. A. (2012). Revisiting population size vs. phoneme inventory size. Language, 88(4), 877–893. http://doi.org/10.1353/lan.2012.0087
+
+* Redo Hay and Bauer
+* Redo Moran et al. 2012
+
+Load the data.
+
+```{r}
+rawdata <- read_tsv("MoranMcCloyWright2012-data.tsv", comment="#")
+```
+
+Add some columns that take the log() of the phoneme, consonant, and vowel counts.
+
+```{r}
+rawdata$logPho <- log10(rawdata$pho)
+rawdata$logCon <- log10(rawdata$con)
+rawdata$logVow <- log10(rawdata$vow)
+rawdata$son[is.na(rawdata$son)] <- 0
+
+```
+
+Load the language family data and the list of families used by Hay & Bauer.
+
+```{r}
+eth <- read_tsv("family-tables/eth15iso-mtfam.tsv")
+
+## load list of families used by Hay & Bauer 2007
+hb <- read.delim("famsHayAndBauer.tsv", header=T, sep="\t", quote="\"", dec=".")
+```
+
+Load the exclusion lists.
+
+```{r}
+## load exclusion lists
+excludeIsol <- read_tsv("family-tables/famsMassedIsolates.tsv")
+excludeMixd <- read_tsv("family-tables/famsMixedLanguages.tsv")
+excludePidg <- read_tsv("family-tables/famsPidginCreole.tsv")
+excludeUncl <- read_tsv("family-tables/famsUnclassified.tsv")
+excludeSign <- read_tsv("family-tables/famsSignedLanguages.tsv")
+excludeExtc <- read_tsv("family-tables/famsExtinctAncient.tsv")
+```
+

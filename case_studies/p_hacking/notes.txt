@@ -1,0 +1,5 @@
+# P-hacking case study
+
+- pick two sets of data
+- run all the possibilities and see what correlates
+- make up a hypothesis (hint: it's already tested)

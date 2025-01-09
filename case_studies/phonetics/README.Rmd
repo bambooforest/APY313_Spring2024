@@ -1,0 +1,121 @@
+---
+title: ""
+author: "Steve Moran"
+date: "2022-10-14"
+output: html_document
+---
+
+# Comparing two groups
+
+T-tests are for comparing the means of two groups (e.g., the average heights of men and women). It is a parametric test based on the [Student's T distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution). Essentially, you test the significance of the difference of the mean values when the sample size is small (i.e, less than 30) and when the population standard deviation is not available.
+
+Assumptions of this test:
+
+* Population distribution is normal
+* Samples are random and independent
+* The sample size is small
+* Population standard deviation is not known
+
+And recall any hypothesis testing follows these steps:
+
+0. Choose a significance level (α)
+1. Formulate a null hypothesis, H0
+2. Formulate an alternative hypothesis, H1
+3. Gather data, calculate a test statistic, e.g. T or F
+4. Determine the probability (p-value) of obtaining T or F "or a more extreme value" under H0
+5. If p ≤ α, reject H0
+
+And the basic process:
+  
+* Set up a hypothesis, and assume that it is true.
+* Gather data from some real-world experiment that is relevant to the hypothesis.
+* Make a determination about the hypothesis, based on the idea of "how likely is our data given the hypothesis?"
+
+Let's go through an example.
+
+***
+
+We have some data from @Johnson2008 called `F1_data.txt`. Let's have a look:
+
+```{r, message=FALSE}
+f1 <- read_csv('data/F1_data.txt')
+str(f1)
+head(f1) %>% kable()
+```
+
+The data include 19 observations from male and female speakers from four different languages producing different cardinal vowels. For each observation (row) the variables for the columns (male and female) record the F1 [formant measures](https://en.wikipedia.org/wiki/Formant) values in frequency in Hz. Formants are the distinctive properties of vowels in the acoustic signal in speech. Formants F1-F3 allow us to identify different [vowels ](https://en.wikipedia.org/wiki/Vowel).
+
+Now we want to ask if there is a statistically significant difference between the F1 values of females versus males. One way we can do this is by comparing the mean of the two groups.
+
+First we state our hypothesis:
+
+* H0 (null hypothesis): there is no difference between the mean value of F1 for females and males
+* H1 (alternative hypothesis): there is a difference
+
+Next we identify which statistical test we can use. T-tests compare two groups. In this case, we have paired data, i.e., each row has an associated group (male and female), in which the speakers produced the same vowel. The [paired t-test](https://en.wikipedia.org/wiki/Student%27s_t-test#Paired_samples) allows us to test for significance between two paired groups.
+
+Now we [search for examples of how we can do a paired t-test in R](https://www.google.com/search?q=how+to+do+paired+t+test+in+r) and figure out what the function is called and which parameters it needs.
+
+```{r}
+t.test(f1$female, f1$male, paired=T, alternative="greater")
+```
+
+And now we interpret the results and either accept or reject the null hypothesis.
+
+You may also want to visualize the data!
+
+But is this helpful if we are trying to compare males and females?
+
+```{r}
+ggplot(data = f1, aes(female)) +
+  geom_boxplot()
+
+ggplot(data = f1, aes(male)) +
+  geom_boxplot()
+```
+
+Perhaps a bit more useful?
+
+```{r}
+ggplot(data = f1, aes(x = vowel, y = female)) +
+  geom_boxplot()
+
+ggplot(data = f1, aes(x = vowel, y = male)) +
+  geom_boxplot()
+```
+
+The problem is the input data is not in a format that is particularly easy to plot as a box plot. So, what do we do? Transform it into a format that is easy to plot. (Remember, something like 80% of your time is getting the data in formats that are useful for particular purposes.)
+
+There are many ways to transform the data. Often it helps to first think about what format you need to get to -- I often do this on scrap paper and then think about the code needed. (Remember with code there's going to typically myriad ways of doing the same thing.)
+
+What do we want? We want to be able to group on the male and female variable -- but right now they are in columns.
+
+Here's a not particularly elegant, but arguably readable way, to transform the data. 
+
+```{r}
+males <- f1 %>% select(male, vowel, language)
+females <- f1 %>% select(female, vowel, language)
+
+males <- males %>% rename(F1 = male)
+males$sex <- 'male'
+males
+
+females <- females %>% rename(F1 = female)
+females$sex <- 'female'
+females
+
+df <- rbind(females, males)
+```
+Now we have something a bit easier to work with.
+
+```{r}
+ggplot(data = df, aes(sex, F1)) +
+  geom_boxplot()
+```
+
+And we can be begin to explore the data in various ways.
+
+```{r}
+ggplot(data = df, aes(vowel, F1, fill=sex)) +
+  geom_boxplot()
+```

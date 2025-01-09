@@ -1,0 +1,1 @@
+The files in this directory that start with "fam" are lists of four-character codes for language families, in tab-delimited format. The codes and descriptions are drawm from Multitree. The file eth15iso-mtfam.tsv is a mapping between ISO 639-3 codes from the 15th edition of The Ethnologue, and the language family code from Multitree to which that language belongs. 

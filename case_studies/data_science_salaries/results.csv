@@ -1,0 +1,146 @@
+employee_residence,work_setting,total_jobs_by_worksetting,total_jobs,proportion
+Algeria,Hybrid,1,1,1
+American Samoa,Hybrid,1,1,1
+Andorra,Hybrid,1,1,1
+Argentina,Remote,9,9,1
+Armenia,In-person,1,2,0.5
+Armenia,Remote,1,2,0.5
+Australia,Hybrid,4,21,0.19047619047619047
+Australia,In-person,9,21,0.42857142857142855
+Australia,Remote,8,21,0.38095238095238093
+Austria,Hybrid,3,6,0.5
+Austria,In-person,2,6,0.3333333333333333
+Austria,Remote,1,6,0.16666666666666666
+Belgium,Hybrid,2,6,0.3333333333333333
+Belgium,Remote,4,6,0.6666666666666666
+Bolivia,Remote,2,2,1
+Bosnia and Herzegovina,Hybrid,1,1,1
+Brazil,Hybrid,1,19,0.05263157894736842
+Brazil,In-person,1,19,0.05263157894736842
+Brazil,Remote,17,19,0.8947368421052632
+Bulgaria,Remote,1,1,1
+Canada,Hybrid,15,224,0.06696428571428571
+Canada,In-person,99,224,0.4419642857142857
+Canada,Remote,110,224,0.49107142857142855
+Central African Republic,Remote,2,2,1
+Chile,Remote,1,1,1
+China,Hybrid,1,1,1
+Colombia,Hybrid,1,16,0.0625
+Colombia,In-person,8,16,0.5
+Colombia,Remote,7,16,0.4375
+Costa Rica,Hybrid,1,1,1
+Croatia,In-person,2,4,0.5
+Croatia,Remote,2,4,0.5
+Cyprus,Hybrid,1,1,1
+Czech Republic,Hybrid,1,2,0.5
+Czech Republic,Remote,1,2,0.5
+Denmark,Hybrid,3,3,1
+Dominican Republic,Remote,1,1,1
+Ecuador,Remote,1,1,1
+Egypt,Remote,2,2,1
+Estonia,In-person,8,9,0.8888888888888888
+Estonia,Remote,1,9,0.1111111111111111
+Finland,Hybrid,1,2,0.5
+Finland,In-person,1,2,0.5
+France,Hybrid,23,54,0.42592592592592593
+France,In-person,7,54,0.12962962962962962
+France,Remote,24,54,0.4444444444444444
+Georgia,Remote,1,1,1
+Germany,Hybrid,22,66,0.3333333333333333
+Germany,In-person,20,66,0.30303030303030304
+Germany,Remote,24,66,0.36363636363636365
+Ghana,In-person,2,4,0.5
+Ghana,Remote,2,4,0.5
+Greece,Hybrid,1,16,0.0625
+Greece,In-person,2,16,0.125
+Greece,Remote,13,16,0.8125
+Honduras,In-person,1,1,1
+Hong Kong,Hybrid,1,1,1
+India,Hybrid,2,14,0.14285714285714285
+India,In-person,2,14,0.14285714285714285
+India,Remote,10,14,0.7142857142857143
+Indonesia,In-person,1,1,1
+Iran,Remote,1,1,1
+Iraq,Hybrid,1,1,1
+Ireland,Hybrid,1,8,0.125
+Ireland,In-person,4,8,0.5
+Ireland,Remote,3,8,0.375
+Italy,Hybrid,4,20,0.2
+Italy,In-person,2,20,0.1
+Italy,Remote,14,20,0.7
+Japan,Hybrid,1,4,0.25
+Japan,In-person,2,4,0.5
+Japan,Remote,1,4,0.25
+Jersey,In-person,1,1,1
+Kenya,Remote,2,2,1
+Kuwait,Hybrid,1,1,1
+Latvia,In-person,6,6,1
+Lithuania,In-person,4,4,1
+Luxembourg,Remote,1,1,1
+Malaysia,Remote,1,1,1
+Malta,Hybrid,1,1,1
+Mauritius,In-person,1,1,1
+Mexico,Remote,9,9,1
+Moldova,In-person,1,2,0.5
+Moldova,Remote,1,2,0.5
+Netherlands,Hybrid,6,21,0.2857142857142857
+Netherlands,In-person,6,21,0.2857142857142857
+Netherlands,Remote,9,21,0.42857142857142855
+New Zealand,Hybrid,1,1,1
+Nigeria,Hybrid,2,11,0.18181818181818182
+Nigeria,In-person,3,11,0.2727272727272727
+Nigeria,Remote,6,11,0.5454545454545454
+Pakistan,In-person,1,6,0.16666666666666666
+Pakistan,Remote,5,6,0.8333333333333334
+Peru,Remote,1,1,1
+Philippines,Hybrid,1,4,0.25
+Philippines,Remote,3,4,0.75
+Poland,Remote,11,11,1
+Portugal,Hybrid,5,26,0.19230769230769232
+Portugal,In-person,7,26,0.2692307692307692
+Portugal,Remote,14,26,0.5384615384615384
+Puerto Rico,Hybrid,1,5,0.2
+Puerto Rico,Remote,4,5,0.8
+Qatar,Remote,1,1,1
+Romania,Hybrid,2,4,0.5
+Romania,In-person,2,4,0.5
+Russia,Hybrid,1,6,0.16666666666666666
+Russia,In-person,1,6,0.16666666666666666
+Russia,Remote,4,6,0.6666666666666666
+Saudi Arabia,Remote,2,2,1
+Serbia,Remote,1,1,1
+Singapore,Hybrid,3,5,0.6
+Singapore,Remote,2,5,0.4
+Slovenia,Hybrid,1,6,0.16666666666666666
+Slovenia,In-person,2,6,0.3333333333333333
+Slovenia,Remote,3,6,0.5
+South Africa,In-person,2,2,1
+South Korea,In-person,2,2,1
+Spain,Hybrid,5,117,0.042735042735042736
+Spain,In-person,71,117,0.6068376068376068
+Spain,Remote,41,117,0.3504273504273504
+Sweden,Hybrid,1,2,0.5
+Sweden,Remote,1,2,0.5
+Switzerland,Hybrid,2,5,0.4
+Switzerland,In-person,1,5,0.2
+Switzerland,Remote,2,5,0.4
+Thailand,Remote,2,2,1
+Tunisia,Remote,2,2,1
+Turkey,Hybrid,2,7,0.2857142857142857
+Turkey,In-person,1,7,0.14285714285714285
+Turkey,Remote,4,7,0.5714285714285714
+Uganda,Remote,1,1,1
+Ukraine,Hybrid,1,7,0.14285714285714285
+Ukraine,In-person,2,7,0.2857142857142857
+Ukraine,Remote,4,7,0.5714285714285714
+United Arab Emirates,In-person,1,3,0.3333333333333333
+United Arab Emirates,Remote,2,3,0.6666666666666666
+United Kingdom,Hybrid,21,442,0.04751131221719457
+United Kingdom,In-person,271,442,0.6131221719457014
+United Kingdom,Remote,150,442,0.3393665158371041
+United States,Hybrid,40,8086,0.004946821667078902
+United States,In-person,5169,8086,0.639253029928271
+United States,Remote,2877,8086,0.35580014840465
+Uzbekistan,In-person,1,3,0.3333333333333333
+Uzbekistan,Remote,2,3,0.6666666666666666
+Vietnam,Remote,2,2,1
